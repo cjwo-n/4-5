@@ -1,0 +1,193 @@
+파라미터 parameter 매개변수 - 함수에서 전달된 값을 받는 변수
+인수 argument : 전달된 값
+
+
+시간 구하는 법
+var current = new Date();	current 변수에 Date 객체생성
+current.getHours();		변수값 current 변수는 Date 속성의 속성값인 getHours(시)를 가져 온다 
+current.getMiniutes();	getMinutes(분)
+current.getSeconds();	초
+
+current.getFullYear 주어진 날짜의 현지 시간 기준 연도를 반환
+----------------
+.length 주로 배열에서 사용 해당 변수의 배열 길이
+-----------------
+toLocaleString 숫자의 사용 언어에 따른 표현을 포함한 문자열을 반환
+--------------
+람다식
+let sum = (a,b) => (`${a+b}이다`)
+	sum변수는 a,b의 속성인데 a,b에 속성값은 a+b이다
+이후
+sum(2,5); 하면  7산출
+
+let hi = (user) => (`${user} 이다`)
+	hi 변수는 user의 속성을 가지며 user에 해당하는 속성값 산출
+이후
+hi("정원"); 정원이다 산출
+
+마지막에 산출시 해당 형태에 맞춰서 산출
+"정원" 문자열, 3일땐 정수형처럼 나옴 
+------------------------
+clearInterval() - 반복실행 멈추기
+setInterval() - 반복 실행
+ ------------
+Document.getElementById()
+주어진 문자열과 일치하는 id 속성을 가진 요소를 찾고, 이를 나타내는 Element 객체를 반환
+-----------
+Number, Boolean, String 객체 -> 래퍼 객체라함 
+문자열 길이 -length 
+특정 위치의 문자에 접근하기
+charAt ()메서드 사용
+문자열.charAt(위치)
+
+str = "good morning";
+str.charAt(3)	->index값으로 d출력
+str[3]		->index값으로 d출력
+두개가 같은 형태
+
+function counting(str, ch){
+    let count = 0;
+
+for(let i = 0; i < str.length; i++){
+    if(str[i] ===ch)  //if(str.chatAt(i) === ch) 같음
+        count += i;
+}
+    return count;
+}
+const string = prompt("문자열 입력하셈");
+const letter = prompt("어떤 문자 체크");
+
+const result= counting(string,letter);
+document.write(`"${string}"에는 "${letter}"가 <span style="color:red">${result}개</span>있다`);
+
+document.ready.function()에서 n을 찾을때
+n의 개수는 3개이지만
+index값으로 6번째, 17번째, 22번째 있어서 다합친 45개로 나옴
+
+---------------------------
+문자열의 부분 문자열 추출하기 -slice)()
+시작 위치부터 끝 위치의 직전까지 추출해서 반환
+문자열.slice(시작위치,끝위치)
+-는 끝에서부터 위치를찾는다 index값 생각하면 됨
+str4 = "good morning."
+str4.slice (-5, 12)
+'ning'
+---------------------
+부분 문자열의 위치 찾기 -indexOf()
+두개 이상의 단어로 구성된 문자열에는 공백으로 구분되는 여러개의 부분 문자열이 있다
+indexOf()메서드는 괄호안의 문자열이 나타나 위치를 알려줌, 찾는 문자열이 없으면 -1반환
+indexOf(문자열,위치)
+indexOf(문자열)
+str = "good morning, everyone, Beutiful morning"
+str.indexOf("morning")
+5반환
+
+str = "good morning, everyone, Beutiful morning"
+str.indexOf("morning")
+5
+
+lastIndexOf(string) 지정된 문자의 위치를 오른쪽부터 찾기
+
+str.indexOf("goood")
+-1
+
+str = "good morning, everyone, Beutiful morning"
+first = str.indexOf("morning")
+5
+
+str.indexOf("morning", first+1)
+33
+str.lastIndexOf("m")
+33
+
+str = "good morning, everyone, Beutiful morning"
+str.length
+40
+-------------------------
+특정 문장(열) 로 시작하는 지 확인 -stsrtsWith
+문자열이 특정 문자나 문자열로 시작하는지 확인
+문자나 문자열에서 영문자의 대소문자를 구별하므로 주의
+문자열.startsWith(문자열 또는 문자)
+
+str2 = "Hello, everyone"
+str2.startsWith("Hello")
+true
+
+str2 = "Hello, everyone"
+str2.startsWith("hello")
+false
+
+str2 = "Hello, everyone"
+str2.startsWith("He")
+true
+----------------------
+특정 문자(열)이 있는지 확인 -includes()
+문자열에 특정 문자나 문자열이 있는 확인 대소문자 구별하므로 주의
+문자열 .include(문자 또는 문자열)
+
+str2.indexOf("every") !== -1
+true
+str2.includes("every")
+true
+-----------------
+문자열에서 공백제거
+.trim(앞뒤로 오는 공백 제거)
+
+str3 = " ac cd ef "
+str3.trim()
+'ac cd ef'
+
+.trimStrart(앞에 있는 공백 제거)
+
+str3 = " ac cd ef "
+str3.trimStart()
+'ac cd ef '
+
+.trimEnd(맨뒤에 있는공백 제거)
+
+str3 = " ac cd ef "
+str3.trimEnd()
+' ac cd ef'
+-----
+문자열의 대소문자 바꾸기
+영문자 문자열의 경우에는 문자열을 모두 대뮨자로, 또는 모두 소문자로 바꿀 수 있다
+문자열.toUpperCase() -모두 대문자
+문자열.toLowerCase() -모두 소문자
+
+str4 = "good morning"
+str4.toUpperCase()
+'GOOD MORNING'
+------------
+문자열의 부분 문자열 추출하기 -substring()
+시작 위치부터 끝 위치의 직전까지 추출해서 반환한다
+끝 위치를 지정하지 않으면 시작 위치부터 문자열 끝까지 추출해서 반환한다
+문자열.substring(시작위치)
+str4 = "good morning"
+str4.substring(5)
+'morning
+
+문자열.substring(시작위치,끝위치)
+
+str4 = "good morning"
+str4.substring(0,4)
+'good'
+
+------------
+구분자를 사용해 문자 쪼개기 = split
+문자열에서 구분자를 기준으로 문자열을 나눈다
+문자열.split(구분자)
+
+str5 = "Hello everyone"
+array1 = str5.split("")
+(14) ['H', 'e', 'l', 'l', 'o', ' ', 'e', 'v', 'e', 'r', 'y', 'o', 'n', 'e']
+
+str5 = "Hello everyone"
+array1 = str5.split(" ")
+(2) ['Hello', 'everyone']
+
+------------------------
+symbol()함수
+symbol.iterator() - for문 과 비슷?
+next()
+-----------
+classList
