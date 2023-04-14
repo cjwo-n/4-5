@@ -36,3 +36,22 @@ state[0]이 count에, state[1]이 setCount에 할당됩니다
 2. react-https://nomadcoders.co/
 render는 react element 를 가지고 html로 가져와 보여준다는 의미
 사용자에게 보여준다
+
+230413
+
+JSX문법 html과 script를 합친문법 즉 react에서 사용하는 문법
+변수를 html에 꽂아 넣을떄는 {중괄호}
+자바스크립트 변수 같은 곳에 있던 자료를 html 중간에 꽂아서 보여주고 싶을떄가 많음
+document.getElementById().innerHTML = ?? 과 비슷
+
+html style 속성 넣고 싶으면 
+<div style = "color:blue"></div> 이 형태를
+<div style={"color:blue"}/> 넣으면 됨
+
+react
+1. [...parameter] 전개연산자 해당 parameter를 복사한다
+2. map
+3. npm install react-bootstrap bootstrap
+4. hook
+
+https://aws.amazon.com/ko/developer/learning/?pg=wisql&cta=herobtn
